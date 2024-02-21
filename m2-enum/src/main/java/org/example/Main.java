@@ -1,7 +1,5 @@
 package org.example;
 
-import static org.example.MathOperators.calculate;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -38,10 +36,51 @@ public class Main {
                 break;
         }
 
+        switch (myMoney){
+            case PENNY:
+                System.out.println(Currency.PENNY.getValue());
+                break;
+            case NICKLE:
+                System.out.println(Currency.NICKLE.getValue());
+                break;
+            case DIME:
+                System.out.println(Currency.DIME.getValue());
+                break;
+            case QUARTER:
+                System.out.println(Currency.QUARTER.getValue());
+                break;
+        }
+
+        System.out.println(Currency.QUARTER.ordinal());
+
+
+
         System.out.println("MathOperation Task");
+
+
 
         calculate(8,MathOperators.MINUS, 4);
 
+
+
+
+    }
+
+    public static void calculate(double num1, MathOperators operator ,double num2){
+        switch (operator){
+            case PLUS:
+                System.out.println(num1+num2);
+                break;
+            case MINUS:
+                System.out.println(num1-num2);
+                break;
+            case MULTIPLY:
+                System.out.println(num1*num2);
+                break;
+            case DIVIDE:
+                System.out.println(num1/num2);
+                break;
+        }
 
     }
 }
