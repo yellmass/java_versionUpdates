@@ -16,7 +16,7 @@ public class AppleTest {
         GreenApplePredicate gp = new GreenApplePredicate();
         HeavyApplePredicate hp = new HeavyApplePredicate();
 
-        filterApples(inventory, gp);
+        filterApples(inventory, gp); 
 
         filterApples(inventory,hp);
 
