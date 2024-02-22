@@ -10,7 +10,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class Apple {
-    public Color color;
-    public double weight;
+    private Color color;
+    private double weight;
 
 }
