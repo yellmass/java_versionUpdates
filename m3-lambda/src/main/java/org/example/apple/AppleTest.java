@@ -17,24 +17,24 @@ public class AppleTest {
         GreenApplePredicate gp = new GreenApplePredicate();
         HeavyApplePredicate hp = new HeavyApplePredicate();
 
-        filterApples(inventory, gp);
-
-        filterApples(inventory,hp);
+//        filterApples(inventory, gp);
+//
+//        filterApples(inventory,hp);
 
         System.out.println("-------------------");
 
-        filterApples(inventory, p->p.getColor().equals(Color.GREEN));  // use lambda expression instead of passing objects of different actions
+        filterApples(inventory, apple -> apple.getColor().equals(Color.GREEN));  // use lambda expression instead of passing objects of different actions
 
-        filterApples(inventory, p->p.getWeight() > 200);  // lambda -> don't need GreenApplePredicate and HeavyApplePredicate classes anymore
+        filterApples(inventory, apple -> apple.getWeight() > 200);  // lambda -> don't need GreenApplePredicate and HeavyApplePredicate classes anymore
 
     }
 
 
-    private static List<Apple> filterApples(List<Apple> inventory, ApplePredicate p){
+    private static List<Apple> filterApples(List<Apple> inventory, Predicate<Apple> predicate){
         List<Apple> result = new ArrayList<Apple>();
 
         for (Apple apple : inventory) {
-            if (p.test(apple)){
+            if (predicate.test(apple)){
                 result.add(apple);
             }
         }
