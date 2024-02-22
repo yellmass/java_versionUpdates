@@ -2,6 +2,7 @@ package org.example.apple;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class AppleTest {
 
@@ -16,9 +17,15 @@ public class AppleTest {
         GreenApplePredicate gp = new GreenApplePredicate();
         HeavyApplePredicate hp = new HeavyApplePredicate();
 
-        filterApples(inventory, gp); 
+        filterApples(inventory, gp);
 
         filterApples(inventory,hp);
+
+        System.out.println("-------------------");
+
+        filterApples(inventory, p->p.getColor().equals(Color.GREEN));  // use lambda expression instead of passing objects of different actions
+
+        filterApples(inventory, p->p.getWeight() > 200);  // lambda -> don't need GreenApplePredicate and HeavyApplePredicate classes anymore
 
     }
 
