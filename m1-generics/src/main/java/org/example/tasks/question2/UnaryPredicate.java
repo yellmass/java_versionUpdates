@@ -1,6 +1,6 @@
 package org.example.tasks.question2;
 
 
-public interface OddPredicate<T> {
+public interface UnaryPredicate<T> {
     public boolean test(T obj);
 }
